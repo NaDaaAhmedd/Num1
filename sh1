@@ -1,0 +1,73 @@
+class MySpecialArrayUlties {
+
+public static void Reverse(int[] A) {
+		for (int i = 0; i < A.length / 2; i++) {
+			int temp = A[i];
+			A[i] = A[A.length - i - 1];
+			A[A.length - i - 1] = temp;
+		}
+
+	}
+
+	public static int[] sumEvenOdd(int[] A) {
+		int sumEven = 0;
+		int sumOdd = 0;
+		for (int i = 0; i < A.length; i++) {
+			if (A[i] % 2 == 0) {
+				sumEven += A[i];
+			} else {
+				sumOdd += A[i];
+			}
+		}
+		int[] B = new int[2];
+		B[0] = sumEven;
+		B[1] = sumOdd;
+		return B;
+	} 
+
+	public static double average(int[] A) {
+		double  av = 0;
+		for (int i = 0; i < A.length; i++) {
+			av += ((double)A[i]/A.length);
+		}
+		return av;
+	}
+
+	public static void moveValue(int[] A, int val) {
+		int counter = 0;
+		for (int j = 0; j < A.length; j++) {
+			if (A[j] != val) {
+				A[counter++] = A[j];
+			}
+		}
+		while (counter < A.length) {
+			A[counter++] = val;
+		}
+	}
+
+	public static int[][] Transpose(int[][] A) {
+		int[][] B = new int[A[0].length][A.length];
+		for (int i = 0; i < B.length; i++) {
+			for (int j = 0; j < B[i].length; j++) {
+				B[i][j] = A[j][i];
+			}
+		}
+		return B;
+	}
+
+	public static BigInteger Fibonacci(int n) {	
+		BigInteger x= BigInteger.ZERO;
+		BigInteger y=BigInteger.ONE;
+		BigInteger result = BigInteger.ZERO;
+		if(n==1) return BigInteger.ZERO;
+		if(n==2) return BigInteger.ONE;
+		else {
+			for(int i=2;i<n;i++) {
+				result =x.add(y);
+				x=y;
+				y=result;
+			}
+			return result;
+		}
+	 }
+  }
