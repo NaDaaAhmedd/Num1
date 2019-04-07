@@ -25,7 +25,7 @@ public class MySpecialLinkedListUtils {
 		}
 
 		double md = 0;
-		node = head;
+		node =  insertionSort(head);
 		LinkedListNode f = new LinkedListNode();
 		int n = 0;
 		while (n != size / 2) {
@@ -271,3 +271,4 @@ public class MySpecialLinkedListUtils {
 	}
 
 }
+
